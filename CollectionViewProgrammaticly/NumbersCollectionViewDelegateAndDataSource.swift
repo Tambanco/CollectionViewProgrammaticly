@@ -9,15 +9,7 @@ import UIKit
 
 class NumbersCollectionViewDelegateAndDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    let numbers: [Int]
-    
-    override init() {
-        var nums: [Int] = []
-        for i in 0...99 {
-            nums.append(i)
-        }
-        self.numbers = nums
-    }
+    let numbers: [String] = ["one", "two", "three"]
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -29,7 +21,7 @@ class NumbersCollectionViewDelegateAndDataSource: NSObject, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! NumbersCollectionViewCell
-        cell.label.text = String(numbers[indexPath.row])
+        cell.label.text = numbers[indexPath.row]
         return cell
     }
     

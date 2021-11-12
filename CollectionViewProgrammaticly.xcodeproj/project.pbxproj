@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49547752273E8D7700E761C0 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49547751273E8D7700E761C0 /* NumberCollectionViewCell.swift */; };
+		49547754273E8D8700E761C0 /* NumbersCollectionViewDelegateAndDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49547753273E8D8700E761C0 /* NumbersCollectionViewDelegateAndDataSource.swift */; };
 		49D56ED6273E6CCA00622FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56ED5273E6CCA00622FB8 /* AppDelegate.swift */; };
 		49D56ED8273E6CCA00622FB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56ED7273E6CCA00622FB8 /* SceneDelegate.swift */; };
 		49D56EDA273E6CCA00622FB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56ED9273E6CCA00622FB8 /* ViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49547751273E8D7700E761C0 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		49547753273E8D8700E761C0 /* NumbersCollectionViewDelegateAndDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersCollectionViewDelegateAndDataSource.swift; sourceTree = "<group>"; };
 		49D56ED2273E6CCA00622FB8 /* CollectionViewProgrammaticly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewProgrammaticly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D56ED5273E6CCA00622FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D56ED7273E6CCA00622FB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				49D56ED5273E6CCA00622FB8 /* AppDelegate.swift */,
 				49D56ED7273E6CCA00622FB8 /* SceneDelegate.swift */,
 				49D56ED9273E6CCA00622FB8 /* ViewController.swift */,
+				49547751273E8D7700E761C0 /* NumberCollectionViewCell.swift */,
+				49547753273E8D8700E761C0 /* NumbersCollectionViewDelegateAndDataSource.swift */,
 				49D56EDE273E6CCB00622FB8 /* Assets.xcassets */,
 				49D56EE0273E6CCB00622FB8 /* LaunchScreen.storyboard */,
 				49D56EE3273E6CCB00622FB8 /* Info.plist */,
@@ -134,6 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D56EDA273E6CCA00622FB8 /* ViewController.swift in Sources */,
+				49547752273E8D7700E761C0 /* NumberCollectionViewCell.swift in Sources */,
+				49547754273E8D8700E761C0 /* NumbersCollectionViewDelegateAndDataSource.swift in Sources */,
 				49D56ED6273E6CCA00622FB8 /* AppDelegate.swift in Sources */,
 				49D56ED8273E6CCA00622FB8 /* SceneDelegate.swift in Sources */,
 			);

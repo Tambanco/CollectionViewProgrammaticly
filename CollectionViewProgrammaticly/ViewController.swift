@@ -7,55 +7,43 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController {
  
     private var headerView: UIView!
     private var titleLabel: UILabel!
     private var numbersCollectionView: UICollectionView!
     private var layout: UICollectionViewFlowLayout!
+    private let numbersCollectionViewDelegateAndDataSource = NumbersCollectionViewDelegateAndDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeView()
+        initializeCollectionView()
         
+    }
+    
+    private func initializeCollectionView() {
         layout = UICollectionViewFlowLayout()
-<<<<<<< HEAD
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        layout.itemSize = CGSize(width: 100, height: 100)
         layout.scrollDirection = .vertical
         numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        numbersCollectionView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        
         self.view.addSubview(numbersCollectionView)
         
-        numbersCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        
-        numbersCollectionView.dataSource = self
-        numbersCollectionView.delegate = self
-        
-=======
-        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        self.view.addSubview(numbersCollectionView)
-        
->>>>>>> bugFixing
         numbersCollectionView.translatesAutoresizingMaskIntoConstraints = false
         numbersCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         numbersCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         numbersCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         numbersCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         
-<<<<<<< HEAD
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = numbersCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        return cell
-=======
->>>>>>> bugFixing
+        numbersCollectionView.register(NumbersCollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
+        
+        numbersCollectionView.dataSource = numbersCollectionViewDelegateAndDataSource
+        numbersCollectionView.delegate = numbersCollectionViewDelegateAndDataSource
+
     }
 
     private func initializeView() {
@@ -83,4 +71,3 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         titleLabel.heightAnchor.constraint(equalTo: headerView.heightAnchor, multiplier: 0.5).isActive = true
     }
 }
-

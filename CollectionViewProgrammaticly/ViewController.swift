@@ -11,10 +11,23 @@ class ViewController: UIViewController {
     
     private var headerView: UIView!
     private var titleLabel: UILabel!
+    private var numbersCollectionView: UICollectionView!
+    private var layout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeView()
+        
+        layout = UICollectionViewFlowLayout()
+        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        self.view.addSubview(numbersCollectionView)
+        
+        numbersCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        numbersCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        numbersCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        numbersCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        numbersCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        
     }
 
     private func initializeView() {

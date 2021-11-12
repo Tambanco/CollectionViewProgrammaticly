@@ -26,10 +26,10 @@ class ViewController: UIViewController {
     private func initializeCollectionView() {
         layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.itemSize = CGSize(width: 50, height: 50)
         layout.scrollDirection = .vertical
         numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        numbersCollectionView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        numbersCollectionView.backgroundColor = .white
         
         self.view.addSubview(numbersCollectionView)
         

@@ -22,10 +22,14 @@ class NumbersCollectionViewCell: UICollectionViewCell {
     }
     
     func commonInit() {
+        
+        layer.borderWidth = 2.0
+        layer.cornerRadius = 10.0
         label = UILabel(frame: contentView.frame)
         contentView.addSubview(label)
         label.textAlignment = .center
-        label.font = UIFont(name: label.font.fontName, size: 12)
-        self.contentView.backgroundColor = .white
+        label.font = UIFont(name: "Arial", size: 12)
+        self.contentView.backgroundColor = #colorLiteral(red: 0.3333333333, green: 0.631372549, blue: 0.537254902, alpha: 1)
+        layer.masksToBounds = true
     }
 }

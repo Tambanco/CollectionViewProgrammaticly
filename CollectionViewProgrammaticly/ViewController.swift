@@ -9,25 +9,33 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
  
-    
-    
     private var headerView: UIView!
     private var titleLabel: UILabel!
     private var numbersCollectionView: UICollectionView!
-    private let layout = UICollectionViewFlowLayout()
+    private var layout: UICollectionViewFlowLayout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeView()
-        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
+        layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 60, height: 60)
         layout.scrollDirection = .vertical
-        view.addSubview(numbersCollectionView)
+        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        self.view.addSubview(numbersCollectionView)
         
         numbersCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         numbersCollectionView.dataSource = self
         numbersCollectionView.delegate = self
+        
+        numbersCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        numbersCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        numbersCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        numbersCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        numbersCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         
     }
     
@@ -50,7 +58,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         titleLabel.text = "Numbers"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont(name: "Arial", size: 22)
-        titleLabel.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         headerView.addSubview(titleLabel)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false

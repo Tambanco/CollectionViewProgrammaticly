@@ -7,14 +7,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+ 
+    
     
     private var headerView: UIView!
     private var titleLabel: UILabel!
+    private var numbersCollectionView: UICollectionView!
+    private let layout = UICollectionViewFlowLayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initializeView()
+        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
+        view.addSubview(numbersCollectionView)
+        
+        numbersCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        numbersCollectionView.dataSource = self
+        numbersCollectionView.delegate = self
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = numbersCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        return cell
     }
 
     private func initializeView() {

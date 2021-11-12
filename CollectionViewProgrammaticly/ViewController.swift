@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         initializeView()
         
         layout = UICollectionViewFlowLayout()
+<<<<<<< HEAD
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 60, height: 60)
         layout.scrollDirection = .vertical
@@ -31,12 +32,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         numbersCollectionView.dataSource = self
         numbersCollectionView.delegate = self
         
+=======
+        numbersCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        self.view.addSubview(numbersCollectionView)
+        
+>>>>>>> bugFixing
         numbersCollectionView.translatesAutoresizingMaskIntoConstraints = false
         numbersCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         numbersCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         numbersCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         numbersCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         
+<<<<<<< HEAD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,6 +54,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = numbersCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
         return cell
+=======
+>>>>>>> bugFixing
     }
 
     private func initializeView() {

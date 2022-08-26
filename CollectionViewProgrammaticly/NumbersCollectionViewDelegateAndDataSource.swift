@@ -24,5 +24,4 @@ class NumbersCollectionViewDelegateAndDataSource: NSObject, UICollectionViewDele
         cell.label.text = imageURLs[indexPath.row]
         return cell
     }
-    
 }

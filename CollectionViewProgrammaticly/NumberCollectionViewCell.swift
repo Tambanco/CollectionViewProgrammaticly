@@ -22,7 +22,6 @@ class NumbersCollectionViewCell: UICollectionViewCell {
     }
     
     func commonInit() {
-        
         layer.borderWidth = 2.0
         layer.cornerRadius = 10.0
         label = UILabel(frame: contentView.frame)
